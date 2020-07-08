@@ -5,6 +5,19 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>Dashboard Content Area</h1>
+
+    <span data-bind="text: name"></span>
+
+    <!-- <div data-bind="ojComponent: {
+                component: 'ojChart',
+                    type: 'pie',
+                    series: datasource }">
+    </div> -->
+
+    <oj-chart type="bar" series="[[datasource]]"></oj-chart>
+    
+    <oj-chart type="pie" series="[[datasource]]"></oj-chart>
+
   <div>
       To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
   </div>

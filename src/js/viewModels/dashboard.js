@@ -8,9 +8,22 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['accUtils'],
- function(accUtils) {
+define(['ojs/ojcore', 'knockout', 'accUtils', 'ojs/ojchart'],
+ function(oj, ko, accUtils) {
     function DashboardViewModel() {
+        let self = this
+
+        self.name = ko.observable('Jerry')
+
+        let data = [
+            {name: "Pedestrians", items: [42]},
+            {name: "Vehicles", items: [56]},
+            {name: "Bicycles", items: [36]},
+            {name: "Trains", items: [12]},
+            {name: "Buses", items: [24]},
+        ]
+        self.datasource = ko.observableArray(data)
+
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
