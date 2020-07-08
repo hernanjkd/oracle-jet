@@ -8,14 +8,18 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'accUtils', 'ojs/ojchart'],
- function(oj, ko, accUtils) {
+
+define(['ojs/ojcore', 'knockout', 'accUtils', 'text!data/transport.json', 'ojs/ojchart'],
+ function(oj, ko, accUtils, file) {
     function DashboardViewModel() {
         let self = this
 
         self.name = ko.observable('Jerry')
 
-        let data = [
+        const transport = JSON.parse(file)
+        self.transportsource = ko.observableArray(transport)
+
+        const data = [
             {name: "Pedestrians", items: [42]},
             {name: "Vehicles", items: [56]},
             {name: "Bicycles", items: [36]},
